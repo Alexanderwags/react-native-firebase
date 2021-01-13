@@ -10,6 +10,7 @@ const CreateUserScreen = ({ params }) => {
   const handleChangeText = (name, value) => {
     setState({ ...state, [name]: value })
   }
+  const saveNewUser = () => {}
   return (
     <ScrollView style={styles.container}>
       <View style={styles.inputGroup}>
@@ -31,7 +32,7 @@ const CreateUserScreen = ({ params }) => {
         />
       </View>
       <View>
-        <Button title="Save User" />
+        <Button title="Save User" onPress={() => saveNewUser()} />
       </View>
     </ScrollView>
   )
