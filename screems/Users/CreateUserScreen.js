@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Text, View, TextInput, ScrollView, StyleSheet, Button } from "react-native"
-
-const CreateUserScreen = ({ params }) => {
+import firebase from "../../dataBase/firebase"
+const CreateUserScreen = (props) => {
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -10,7 +10,19 @@ const CreateUserScreen = ({ params }) => {
   const handleChangeText = (name, value) => {
     setState({ ...state, [name]: value })
   }
-  const saveNewUser = () => {}
+  const saveNewUser = async () => {
+    try {
+      await firebase.db.collection("users").add({
+        name: state.name,
+        email: state.email,
+        phone: state.phone,
+      })
+      alert("saved")
+      props.navigation.navigate("UsersList")
+    } catch (error) {
+      console.error(error)
+    }
+  }
   return (
     <ScrollView style={styles.container}>
       <View style={styles.inputGroup}>
