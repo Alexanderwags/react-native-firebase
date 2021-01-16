@@ -17,7 +17,6 @@ const CreateUserScreen = (props) => {
         email: state.email,
         phone: state.phone,
       })
-      alert("saved")
       props.navigation.navigate("UsersList")
     } catch (error) {
       console.error(error)

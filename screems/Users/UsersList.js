@@ -24,12 +24,11 @@ const UsersList = (props) => {
           <ListItem
             key={user.id}
             bottomDivider
-            onPress={
-              (() => props.navigation.navigate("UserDetailScreen"),
-              {
+            onPress={() => {
+              props.navigation.navigate("UserDetailScreen", {
                 userId: user.id,
               })
-            }
+            }}
           >
             <ListItem.Chevron />
             <Avatar
