@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Text, View, TextInput, ScrollView, StyleSheet, Button } from "react-native"
+import { Text, TextInput, ScrollView, StyleSheet, Button, View } from "react-native"
 import firebase from "../../dataBase/firebase"
 const CreateUserScreen = (props) => {
   const [state, setState] = useState({
